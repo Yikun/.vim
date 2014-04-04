@@ -124,7 +124,7 @@ function! <SID>Trinity_InitSourceExplorer()
 
     " // Set the height of Source Explorer window                                  "
     if has("unix")
-        let g:SrcExpl_winHeight = 13
+        let g:SrcExpl_winHeight = 8
     else
         let g:SrcExpl_winHeight = 8
     endif
@@ -150,13 +150,13 @@ function! <SID>Trinity_InitSourceExplorer()
     let g:SrcExpl_isUpdateTags = 0
     " // Use program 'ctags' with argument '--sort=foldcase -R' to create or       "
     " // update a tags file                                                        "
-    " let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
+    let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
     " // Set "<F12>" key for updating the tags file artificially                   "
-    " let g:SrcExpl_updateTagsKey = "<F12>"
+    let g:SrcExpl_updateTagsKey = "<F12>"
     " // Set "<F3>" key for displaying the previous definition in the jump list    "
-    let g:SrcExpl_prevDefKey = "<F3>"
+    " let g:SrcExpl_prevDefKey = "<F3>"
     " // Set "<F4>" key for displaying the next definition in the jump list        "
-    let g:SrcExpl_nextDefKey = "<F4>"
+    " let g:SrcExpl_nextDefKey = "<F4>"
 
 endfunction " }}}
 
