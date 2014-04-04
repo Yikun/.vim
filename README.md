@@ -28,6 +28,12 @@ vim-config
 
 `vimgrep` 自带插件，用于搜索tags中匹配字符，[效果](/assets/post/2014-03-19-vim/vim_grep.png)
 
+`pyflakes.vim`python实时错误检查
+
+`python-mode.vim`开启python全能模式！
+
+`supertab.vim`tab后，可以查看doc、补全代码
+
 ###怎么用？###
 
 最简单的方法就是clone所有的配置到你的`.vim`目录之中，首先交代下我的vim配置方法，与vim相关的配置主要是`.vim`里的插件，一般目录位于`~/.vim`，还有vim的配置文件`~/.vimrc`，为了让配置vim更简单些，利用了`ln -s  ~/.vim/.vimrc ~/.vimrc`命令，这样，就相当于`～/.vimrc`是一个指向`~/.vim/.vimrc`的快捷方式。因此使用我的配置，也很简单。
