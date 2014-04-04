@@ -24,9 +24,7 @@ syntax on
 set fileencodings=utf-8,chinese,latin-1
 "configure tags - add additional tags here or comment out not-used ones
 set tags+=~/.vim/tags/cpp
-set tags+=~/.vim/tags/gl
-set tags+=~/.vim/tags/sdl
-set tags+=~/.vim/tags/qt4
+set tags+=./vimtags
 " taglist
 "let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
 "let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
@@ -116,7 +114,6 @@ endfunction
 
 map <C-o> <ESC>:call QFSwitch()<CR>
 
-"nmap <C-o> :cclose<CR><F8><CR><F8><CR>
 " Open and close all the three plugins on the same time 
 nmap <F8>   :TrinityToggleAll<CR> 
 
