@@ -45,7 +45,7 @@ vim-config
 
 第二步，复制配置。
 
-        # git clone git@github.com:Yikun/vim-config.git ~/.vim
+        # git clone https://github.com/Yikun/vim-config.git ~/.vim
     
 第三步，创建.vimrc链接
 
