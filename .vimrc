@@ -1,5 +1,5 @@
 set nocompatible
-set clipboard  += unnamed
+set clipboard+=unnamed
 
 " Style
 set ruler
@@ -7,15 +7,11 @@ set number
 set showmatch
 set incsearch
 set autoindent
-set tabstop     = 4
-set shiftwidth  = 4
-set softtabstop = 4
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set laststatus=2
 au FileType c,cpp,h,java,javascript,html setlocal cindent
-
-" Color
-set t_Co=256
-colorscheme desert
-syntax on
 
 " Encoding
 set fileencodings=utf-8,chinese,latin-1
@@ -33,33 +29,38 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'wesleyche/SrcExpl'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'wesleyche/Trinity'
+Plugin 'tomasr/molokai'
 
 call vundle#end()
 filetype plugin indent on
 
-" Ctags
-map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q.<CR>
-set tags+=./vimtags
+" Color
+let g:molokai_original = 1
+let g:rehash256 = 1
+colorscheme molokai
+syntax on
 
-
-"映射光标在窗口间移动的快捷键
+" Switch windows
 nmap <C-H> <C-W>h
 nmap <C-J> <C-W>j
 nmap <C-K> <C-W>k
 nmap <C-L> <C-W>l
 
+" CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" ff
 map ff :call Search_Word()<CR>:copen<CR>
 function Search_Word()
-	let w = expand("<cword>") " 在当前光标位置抓词
+	let w = expand("<cword>")
 	execute "vimgrep " w " *"
 endfunction
 
 nmap <F4> :cn<cr>
 nmap <F3> :cp<cr>
 
+" ctrl + o, open/close ff
 function! QFSwitch()
 	redir => ls_output
 	execute ':silent! ls'
@@ -88,3 +89,6 @@ nmap <F10>  :TrinityToggleTagList<CR>
 
 " Open and close the NERD_tree.vim separately 
 nmap <F11>  :TrinityToggleNERDTree<CR>
+
+" Ctags
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
