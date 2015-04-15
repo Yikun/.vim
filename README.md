@@ -6,7 +6,7 @@ vim-config
 
 ###有什么?###
 
-`pathogen.vim` 用于插件管理，把插件放到bundle目录就可以了。
+`Vundle.vim` 用于插件管理，PluginInstall/PluginUpdate
 
 `Trinity.vim` 用于集中管理taglist、nerdtree、srcexpl三个插件，按 `F8` 就可以快速打开这三个插件了。
 
@@ -16,8 +16,6 @@ vim-config
 
 `srcexpl.vim` 用于函数的展示，当移动到函数上的之后，就会在srcexpl的窗口里面显示函数定义的。
 
-`CSApprox.vim` 这是一个vim配色的插件，我比较喜欢desert这个配色。
-
 `a.vim` 用于快速切换*.c和*.h
 
 `ctrlp.vim` 用于文件的模糊搜索，能够加快打开文件的速度[效果](http://yikun.github.io/assets/post/2014-03-19-vim/vim_ctrlp.png)
@@ -26,18 +24,23 @@ vim-config
 
 `vimgrep` 自带插件，用于搜索tags中匹配字符，[效果](http://yikun.github.io/assets/post/2014-03-19-vim/vim_grep.png)
 
+`molokai` 配色插件不解释
+
 ###怎么用？###
-第一步，备份。
+第一步，备份
 
-        # mv ~/.vim backup
-        # mv ~/.vimrc backup
+        $ mv ~/.vim backup
+        $ mv ~/.vimrc backup
 
-第二步，复制配置。
+第二步，安装插件
 
-        # git clone https://github.com/Yikun/.vim.git ~/.vim
-    
+        $ git clone https://github.com/Yikun/.vim.git ~/.vim
+		$ mkdir -p ~/.vim/bundle
+		$ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+		$ vim +PluginInstall +qall
+
 第三步，创建.vimrc链接
 
-        # ln -s ~/.vim/.vimrc ~/.vimrc
+        $ ln -s ~/.vim/.vimrc ~/.vimrc
         
 最后，Enjoy it!
