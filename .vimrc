@@ -1,36 +1,46 @@
-set nocp
 set nocompatible
-"设置行号
+set clipboard  += unnamed
+
+" Style
+set ruler
 set number
 set showmatch
-set ruler
 set incsearch
-"设置自动缩进
 set autoindent
-"设置制表符宽度为4
-set tabstop=4
-"设置缩进的空格数为4
-set shiftwidth=4
-set softtabstop=4
-"设置使用C/C++自动缩进
-set cindent                           
-set nobackup                       
-set clipboard+=unnamed
+set tabstop     = 4
+set shiftwidth  = 4
+set softtabstop = 4
+au FileType c,cpp,h,java,javascript,html setlocal cindent
+
+" Color
 set t_Co=256
 colorscheme desert
-filetype plugin indent on
 syntax on
+
+" Encoding
 set fileencodings=utf-8,chinese,latin-1
-"configure tags - add additional tags here or comment out not-used ones
-set tags+=~/.vim/tags/cpp
+
+" Vundle
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'vim-scripts/a.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'wesleyche/SrcExpl'
+Plugin 'vim-scripts/taglist.vim'
+Plugin 'wesleyche/Trinity'
+
+call vundle#end()
+filetype plugin indent on
+
+" Ctags
+map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q.<CR>
 set tags+=./vimtags
 
-" build tags of your own project with Ctrl-F12
-map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q.<CR>
-
-"插件安装管理
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
 
 "映射光标在窗口间移动的快捷键
 nmap <C-H> <C-W>h
