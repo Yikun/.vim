@@ -59,6 +59,7 @@ set completeopt=menuone,menu,longest
 "endif
 
 "插件安装管理
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 "文件打开插件
