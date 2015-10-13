@@ -41,3 +41,5 @@ vim-config
         # ln -s ~/.vim/.vimrc ~/.vimrc
         
 最后，Enjoy it!
+
+BTW, 如果有网络的话，可以试试本项目的[vundle](https://github.com/Yikun/.vim/tree/vundle)分支，轻松安装、升级、管理插件。:)
